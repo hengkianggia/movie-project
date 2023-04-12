@@ -6,7 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./Pages/Root";
 import HomePage, { loader as discoverLoader } from "./Pages/HomePage";
 import DetailMovie, { loader as detailMovie } from "./Pages/DetailMovie";
-import Genre from "./Pages/Genre";
+import Genre, {loader as genreLoader} from "./Pages/Genre";
 
 const router = createBrowserRouter([
   {
@@ -21,12 +21,14 @@ const router = createBrowserRouter([
       {
         path: ":movieId",
         element: <DetailMovie />,
-        id: 'detail-movie',
+        id: "detail-movie",
         loader: detailMovie,
       },
       {
         path: "genre/:genreId",
         element: <Genre />,
+        id: 'genre',
+        loader: genreLoader,
       },
     ],
   },

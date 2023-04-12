@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const DetailItem = ({ data }) => {
-  // console.log(data);
-  
+  // console.log(data.id);
+
   return (
     <>
       <div className="w-full">
@@ -29,8 +29,8 @@ const DetailItem = ({ data }) => {
             <div className="flex gap-x-5 font-semibold">
               {data.genres.map((item) => {
                 return (
-                  <p>
-                    <Link to={item.id}>{item.name}</Link>
+                  <p key={item.id}>
+                    <Link to={`/genre/${item.id}`}>{item.name}</Link>
                   </p>
                 );
               })}
