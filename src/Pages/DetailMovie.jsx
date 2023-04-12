@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import { Await, defer, useLoaderData, useRouteLoaderData } from "react-router";
+import { Await, defer, useRouteLoaderData } from "react-router";
 import DetailItem from "../Components/DetailItem";
 import { FiLoader } from "react-icons/fi";
 import SimilarMovie from "../Components/SimilarMovie";
