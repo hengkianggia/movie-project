@@ -2,9 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const DetailItem = ({ data }) => {
+  // console.log(data);
+  
   return (
     <>
-      <div className="w-full px-10 py-5">
+      <div className="w-full">
         {/* layer 1 */}
         <div className="w-full flex">
           {/* image */}
@@ -19,7 +21,7 @@ const DetailItem = ({ data }) => {
             </div>
           </div>
           {/* description */}
-          <div className="flex pt-5 flex-col gap-y-2 w-[60%] text-gray-800">
+          <div className="flex justify-center flex-col gap-y-2 w-[60%] text-gray-800">
             <p className="">Status : {data.status}</p>
             <h1 className="text-5xl font-semibold">{data.title}</h1>
             <p className="text-md">{data.overview}</p>

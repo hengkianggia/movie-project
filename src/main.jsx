@@ -21,6 +21,7 @@ const router = createBrowserRouter([
       {
         path: ":movieId",
         element: <DetailMovie />,
+        id: 'detail-movie',
         loader: detailMovie,
       },
       {

@@ -1,25 +1,66 @@
-import React from "react";
-import { useLoaderData, useParams } from "react-router";
+import React, { Suspense } from "react";
+import { Await, defer, useLoaderData, useRouteLoaderData } from "react-router";
 import DetailItem from "../Components/DetailItem";
+import { FiLoader } from "react-icons/fi";
+import SimilarMovie from "../Components/SimilarMovie";
 
 const DetailMovie = () => {
-  const data = useLoaderData();
-  console.log(data)
+  const { detail, similar } = useRouteLoaderData("detail-movie");
+
   return (
-    <div>
-      <DetailItem data={data}/>
+    <div className="w-full px-10 py-8 space-y-10">
+      <Suspense
+        fallback={
+          <div className="text-[100px] w-full h-[100vh] grid place-items-center">
+            <FiLoader />
+          </div>
+        }
+      >
+        <Await resolve={detail}>
+          {(dataMovie) => <DetailItem data={dataMovie} />}
+        </Await>
+      </Suspense>
+
+      <div className="w-full flex justify-between flex-wrap gap-y-5">
+        <Suspense
+          fallback={
+            <div className="text-[20px] w-full h-full grid place-items-center">
+              <FiLoader />
+            </div>
+          }
+        >
+          <Await resolve={similar}>
+            {(similarMovie) => <SimilarMovie data={similarMovie} />}
+          </Await>
+        </Suspense>
+      </div>
     </div>
   );
 };
 
 export default DetailMovie;
 
-export const loader = async ({ params }) => {
-  const id = params.movieId;
-
+const loadDetail = async (id) => {
   const response = await fetch(
     `https://api.themoviedb.org/3/movie/${id}?api_key=542160c3792c7bccea78ba58cf55157a`
   );
   const data = await response.json();
   return data;
+};
+
+const similarMovie = async (id) => {
+  const response = await fetch(
+    `https://api.themoviedb.org/3/movie/${id}/similar?api_key=542160c3792c7bccea78ba58cf55157a`
+  );
+  const data = await response.json();
+  return data.results;
+};
+
+export const loader = ({ params }) => {
+  const id = params.movieId;
+
+  return defer({
+    detail: loadDetail(id),
+    similar: similarMovie(id),
+  });
 };
