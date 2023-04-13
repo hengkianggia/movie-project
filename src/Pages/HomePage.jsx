@@ -22,7 +22,7 @@ const HomePage = () => {
       <div className="flex justify-between flex-wrap gap-y-10 mt-10 px-5">
         {listMovie}
       </div>
-      <div className="w-full flex justify-end px-5 mb-10">
+      <div className="w-full flex justify-end px-5">
         <button className="px-5 py-2 bg-gray-200">
           Next page
         </button>

@@ -1,17 +1,14 @@
-import React from 'react'
+import React from "react";
+import { FiLoader } from "react-icons/fi";
 
-const Loading = () => {
+const Loading = ({className}) => {
   return (
-    <div className="w-full h-[100vh] grid place-items-center">
-      <div>
-        <img
-          src="https://icon-library.com/images/loading-icon-png/loading-icon-png-12.jpg"
-          alt=""
-          className='w-48 h-48 object-cover object-center'
-        />
-      </div>
+    <div
+      className={`text-[100px] w-full h-[100vh] grid place-items-center ${className}`}
+    >
+      <FiLoader />
     </div>
   );
-}
+};
 
-export default Loading
+export default Loading;

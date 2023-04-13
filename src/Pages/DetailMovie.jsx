@@ -3,32 +3,21 @@ import { Await, defer, useRouteLoaderData } from "react-router";
 import DetailItem from "../Components/DetailItem";
 import { FiLoader } from "react-icons/fi";
 import SimilarMovie from "../Components/SimilarMovie";
+import Loading from "../Components/Loading";
 
 const DetailMovie = () => {
   const { detail, similar } = useRouteLoaderData("detail-movie");
 
   return (
     <div className="w-full px-10 py-8 space-y-10">
-      <Suspense
-        fallback={
-          <div className="text-[100px] w-full h-[100vh] grid place-items-center">
-            <FiLoader />
-          </div>
-        }
-      >
+      <Suspense fallback={<Loading />}>
         <Await resolve={detail}>
           {(dataMovie) => <DetailItem data={dataMovie} />}
         </Await>
       </Suspense>
 
       <div className="w-full flex justify-between flex-wrap gap-y-5">
-        <Suspense
-          fallback={
-            <div className="text-[20px] w-full h-full grid place-items-center">
-              <FiLoader />
-            </div>
-          }
-        >
+        <Suspense fallback={<Loading className={"text-[30px]"} />}>
           <Await resolve={similar}>
             {(similarMovie) => <SimilarMovie data={similarMovie} />}
           </Await>
