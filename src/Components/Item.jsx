@@ -5,7 +5,7 @@ const Item = ({ title, img, id }) => {
 
   return (
     <>
-      <div className="w-[19%]">
+      <div className="w-[19%] hover:scale-105 transition-all">
         <Link to={`/${id}`}>
           <div className="w-full h-96 bg-gray-200 rounded-xl overflow-hidden">
             <img

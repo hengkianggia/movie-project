@@ -29,14 +29,21 @@ const DetailItem = ({ data }) => {
             <div className="flex gap-x-5 font-semibold">
               {data.genres.map((item) => {
                 return (
-                  <p key={item.id}>
+                  <p
+                    key={item.id}
+                    className="hover:scale-105 transition-all hover:text-red-400"
+                  >
                     <Link to={`/genre/${item.id}`}>{item.name}</Link>
                   </p>
                 );
               })}
             </div>
             <p className="">Tagline : {data.tagline}</p>
-            <a href={data.homepage} target="_blank" className="">
+            <a
+              href={data.homepage}
+              target="_blank"
+              className="hover:text-yellow-400 transition-all"
+            >
               More Information?
             </a>
           </div>
