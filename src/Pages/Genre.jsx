@@ -67,22 +67,11 @@ const Genre = () => {
     genreName = "Western";
   }
 
-  const dataGenre = genre.map((item) => {
-    return (
-      <Item
-        title={item.title}
-        id={item.id}
-        key={item.id}
-        img={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
-      />
-    );
-  });
-
   return (
     <div className="flex flex-col items-start">
       <h1 className="text-center mt-5 text-2xl ml-5">{data && genreName}</h1>
       <div className="flex justify-between flex-wrap gap-y-8 mt-10 px-5">
-        {dataGenre}
+        <Item data={genre} />
       </div>
     </div>
   );
