@@ -1,13 +1,75 @@
 import React from "react";
-import GenreItem from "../Components/GenreItem";
 import { useParams, useRouteLoaderData } from "react-router";
+import Item from "../Components/Item";
 
 const Genre = () => {
   const genre = useRouteLoaderData("genre");
+  const param = useParams();
+  let data = param.genreId;
+
+  let genreName = "";
+
+  if (data == 28) {
+    genreName = "Action";
+  }
+  if (data == 12) {
+    genreName = "Adventure";
+  }
+  if (data == 16) {
+    genreName = "Animation";
+  }
+  if (data == 35) {
+    genreName = "Comedy";
+  }
+  if (data == 80) {
+    genreName = "Crime";
+  }
+  if (data == 99) {
+    genreName = "Documentary";
+  }
+  if (data == 18) {
+    genreName = "Drama";
+  }
+  if (data == 10751) {
+    genreName = "Family";
+  }
+  if (data == 14) {
+    genreName = "Fantasy";
+  }
+  if (data == 36) {
+    genreName = "History";
+  }
+  if (data == 27) {
+    genreName = "Horror";
+  }
+  if (data == 10402) {
+    genreName = "Music";
+  }
+  if (data == 9648) {
+    genreName = "Mystery";
+  }
+  if (data == 10749) {
+    genreName = "Romance";
+  }
+  if (data == 878) {
+    genreName = "Science Fiction";
+  }
+  if (data == 10770) {
+    genreName = "TV Movie";
+  }
+  if (data == 53) {
+    genreName = "Thriller";
+  }
+  if (data == 10752) {
+    genreName = "War";
+  }
+  if (data == 37) {
+    genreName = "Western";
+  }
 
   const dataGenre = genre.map((item) => {
     return (
-      <GenreItem
+      <Item
         title={item.title}
         id={item.id}
         key={item.id}
@@ -18,8 +80,8 @@ const Genre = () => {
 
   return (
     <div className="flex flex-col items-start">
-      <h1 className="text-center mt-5 text-2xl ml-5">genres</h1>
-      <div className="flex justify-between flex-wrap gap-y-10 mt-10 px-5">
+      <h1 className="text-center mt-5 text-2xl ml-5">{data && genreName}</h1>
+      <div className="flex justify-between flex-wrap gap-y-8 mt-10 px-5">
         {dataGenre}
       </div>
     </div>

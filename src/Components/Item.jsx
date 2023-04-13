@@ -2,11 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Item = ({ title, img, id }) => {
-  // console.log(id);
+
   return (
     <>
       <div className="w-[19%]">
-        <Link to={`${id}`}>
+        <Link to={`/${id}`}>
           <div className="w-full h-96 bg-gray-200 rounded-xl overflow-hidden">
             <img
               src={img}
