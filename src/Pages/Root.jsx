@@ -2,6 +2,7 @@ import React from "react";
 import { Outlet, useNavigation } from "react-router";
 import Navbar from "../Components/Navbar";
 import { FiLoader } from "react-icons/fi";
+import Footer from "../Components/Footer";
 
 const Root = () => {
   const navigation = useNavigation();
@@ -17,6 +18,8 @@ const Root = () => {
       ) : (
         <Outlet />
       )}
+      
+      <Footer/>
     </div>
   );
 };
