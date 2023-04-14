@@ -6,7 +6,7 @@ import { BsGooglePlay, BsApple } from "react-icons/bs";
 
 const Footer = () => {
   return (
-    <footer className="w-full px-5 py-10 flex justify-between text-white bg-gray-800 mt-20">
+    <footer className="w-full px-5 py-10 flex justify-between text-white bg-gray-800 mt-8">
       {/* left */}
       <div className="flex flex-col w-[50%] gap-y-2">
         <ul className="flex gap-x-5">

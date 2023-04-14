@@ -69,8 +69,8 @@ const Genre = () => {
 
   return (
     <div className="flex flex-col items-start">
-      <h1 className="text-center mt-5 text-2xl ml-5">{data && genreName}</h1>
-      <div className="flex justify-between flex-wrap gap-y-8 mt-10 px-5">
+      <h1 className="text-center text-3xl ml-5">{data && genreName}</h1>
+      <div className="flex justify-between flex-wrap gap-y-8 mt-8 px-5">
         <Item data={genre} />
       </div>
     </div>

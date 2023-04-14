@@ -8,7 +8,7 @@ const DetailMovie = () => {
   const { detail, similar } = useRouteLoaderData("detail-movie");
 
   return (
-    <div className="w-full px-10 py-8 space-y-10">
+    <div className="w-full px-10 space-y-10 ">
       <Suspense fallback={<Loading />}>
         <Await resolve={detail}>
           {(dataMovie) => <DetailItem data={dataMovie} />}

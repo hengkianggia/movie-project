@@ -2,12 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Item = ({ data }) => {
-  console.log(data);
+
   return (
     <>
       {data.map((item) => {
         return (
-          <div className="w-[19%] hover:scale-105 transition-all">
+          <div className="w-[19%] hover:scale-105 transition-all" key={item.id}>
             <Link to={`/${item.id}`}>
               <div className="w-full h-96 bg-gray-200 rounded-xl overflow-hidden">
                 <img

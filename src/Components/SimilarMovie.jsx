@@ -14,7 +14,7 @@ const SimilarMovie = ({ data }) => {
               <img
                 src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
                 alt={item.title}
-                className="w-full h-full object-cover object-center rounded-lg"
+                className="w-[100%] h-72 object-cover object-center rounded-lg"
               />
             </Link>
           </div>

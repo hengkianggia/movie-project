@@ -2,10 +2,10 @@ import React, { Suspense } from "react";
 import Item from "../Components/Item";
 import { Await, defer, useLoaderData } from "react-router";
 import Loading from "../Components/Loading";
+import Discover from "../Components/Discover";
 
 const HomePage = () => {
   const { discover } = useLoaderData();
-
 
   return (
     <>
@@ -16,6 +16,14 @@ const HomePage = () => {
           </Await>
         </Suspense>
       </div>
+
+      {/* <div className="flex items-center relative px-5">
+        <Suspense fallback={<Loading />}>
+          <Await resolve={discover}>
+            {(dataDiscover) => <Discover data={dataDiscover} />}
+          </Await>
+        </Suspense>
+      </div> */}
     </>
   );
 };
