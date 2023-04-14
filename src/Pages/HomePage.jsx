@@ -9,21 +9,21 @@ const HomePage = () => {
 
   return (
     <>
-      <div className="flex justify-between flex-wrap gap-y-8 mt-10 px-5">
+      {/* <div className="flex justify-between flex-wrap gap-y-8 mt-10 px-5">
         <Suspense fallback={<Loading />}>
           <Await resolve={discover}>
             {(dataDiscover) => <Item data={dataDiscover} />}
           </Await>
         </Suspense>
-      </div>
+      </div> */}
 
-      {/* <div className="flex items-center relative px-5">
+      <div className="flex flex-col relative px-5">
         <Suspense fallback={<Loading />}>
           <Await resolve={discover}>
             {(dataDiscover) => <Discover data={dataDiscover} />}
           </Await>
         </Suspense>
-      </div> */}
+      </div>
     </>
   );
 };
