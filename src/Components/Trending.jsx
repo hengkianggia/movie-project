@@ -10,15 +10,16 @@ const Trending = ({ data }) => {
 
       <div className="w-full h-full overflow-x-scroll scroll whitespace-nowrap scroll-smooth flex snap-x">
         {data.map((item) => {
-          console.log(item);
+          // console.log(item.id);
+          
           return (
             <>
               <div
-                className="flex justify-center flex-col mr-2 rounded-xl snap-center bg-cover bg-center"
-                key={item.id}
+                className="flex mr-2 rounded-xl snap-center bg-cover bg-center"
                 style={{
                   backgroundImage: `url('https://image.tmdb.org/t/p/w500${item.poster_path}')`,
                 }}
+                key={item.id}
               >
                 <div className="w-full h-full relative rounded-xl overflow-hidden">
                   <Link to={`/${item.id}`}>

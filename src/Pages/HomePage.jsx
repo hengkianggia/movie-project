@@ -10,14 +10,6 @@ const HomePage = () => {
 
   return (
     <>
-      {/* <div className="flex justify-between flex-wrap gap-y-8 mt-10 px-5">
-        <Suspense fallback={<Loading />}>
-          <Await resolve={discover}>
-            {(dataDiscover) => <Item data={dataDiscover} />}
-          </Await>
-        </Suspense>
-      </div> */}
-
       <div className="flex flex-col relative px-5">
         <Suspense fallback={<Loading />}>
           <Await resolve={discover}>
@@ -25,7 +17,7 @@ const HomePage = () => {
           </Await>
         </Suspense>
 
-        <Suspense fallback={<Loading />}>
+        <Suspense fallback={<Loading className={"text-[30px]"} />}>
           <Await resolve={trending}>
             {(trendingMovie) => <Trending data={trendingMovie} />}
           </Await>

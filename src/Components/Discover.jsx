@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Discover = ({ data }) => {
-  console.log(data);
+  // console.log(data);
   return (
     <>
       <div className="mb-5">
@@ -11,7 +11,7 @@ const Discover = ({ data }) => {
 
       <div className="w-full h-full overflow-x-scroll scroll whitespace-nowrap scroll-smooth flex snap-x">
         {data.map((item) => {
-          console.log(item);
+          // console.log(item);
           return (
             <>
               <div
