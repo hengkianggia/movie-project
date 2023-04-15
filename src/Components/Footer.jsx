@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { AiFillInstagram } from "react-icons/ai";
-import { IoLogoWhatsapp } from "react-icons/io";
+import { MdEmail } from "react-icons/md";
 import { BsGooglePlay, BsApple } from "react-icons/bs";
 
 const Footer = () => {
@@ -35,15 +35,22 @@ const Footer = () => {
           <h2>Terhubunglah dengan saya hehe</h2>
           <div className="flex gap-x-3 items-center">
             <div className="flex text-[36px]">
-              <AiFillInstagram />
+              <a
+                href="https://www.instagram.com/_pengkyy/?hl=en"
+                target="_blank"
+              >
+                <AiFillInstagram />
+              </a>
             </div>
-            <div className="flex text-[32px]">
-              <IoLogoWhatsapp />
+            <div className="flex text-[36px]">
+              <a href="mailto: pengkyjd00@gmail.com">
+                <MdEmail />
+              </a>
             </div>
           </div>
         </div>
 
-        <div className="space-y-2">
+        {/* <div className="space-y-2">
           <h3>PNGKY APP</h3>
           <div className="flex gap-x-3 items-center">
             <div className="flex text-[32px]">
@@ -53,7 +60,7 @@ const Footer = () => {
               <BsApple />
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </footer>
   );
