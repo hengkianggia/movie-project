@@ -5,17 +5,19 @@ const Trending = ({ data }) => {
   return (
     <>
       <div className="mb-5">
-        <h1 className="text-3xl font-semibold text-gray-800">Trending</h1>
+        <h1 className="text-3xl font-semibold text-gray-800">
+          <Link to={'trending'}>Trending</Link>
+        </h1>
       </div>
 
       <div className="w-full h-full overflow-x-scroll scroll whitespace-nowrap scroll-smooth flex snap-x">
         {data.map((item) => {
           // console.log(item.id);
-          
+
           return (
             <>
               <div
-                className="flex mr-2 rounded-xl snap-center bg-cover bg-center"
+                className="flex mr-3 rounded-xl snap-center bg-cover bg-center"
                 style={{
                   backgroundImage: `url('https://image.tmdb.org/t/p/w500${item.poster_path}')`,
                 }}

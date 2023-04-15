@@ -6,7 +6,11 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./Pages/Root";
 import HomePage, { loader as discoverLoader } from "./Pages/HomePage";
 import DetailMovie, { loader as detailMovie } from "./Pages/DetailMovie";
-import Genre, {loader as genreLoader} from "./Pages/Genre";
+import Genre, { loader as genreLoader } from "./Pages/Genre";
+import Trending from "./Pages/Trending";
+import HomeTrending, {
+  loader as trendingLoader,
+} from "./Components/HomeTrending";
 
 const router = createBrowserRouter([
   {
@@ -27,8 +31,20 @@ const router = createBrowserRouter([
       {
         path: "genre/:genreId",
         element: <Genre />,
-        id: 'genre',
+        id: "genre",
         loader: genreLoader,
+      },
+      {
+        path: "trending",
+        element: <Trending />,
+        id: "trending",
+        loader: trendingLoader,
+        children: [
+          {
+            index: true,
+            element: <HomeTrending />,
+          },
+        ],
       },
     ],
   },
