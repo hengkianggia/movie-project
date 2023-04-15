@@ -11,6 +11,9 @@ import Trending from "./Pages/Trending";
 import HomeTrending, {
   loader as trendingLoader,
 } from "./Components/HomeTrending";
+import TrendingType, {
+  loader as trendingTypeLoader,
+} from "./Pages/TrendingType";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +46,12 @@ const router = createBrowserRouter([
           {
             index: true,
             element: <HomeTrending />,
+          },
+          {
+            path: ":trendingType",
+            element: <TrendingType />,
+            id: "trending-type",
+            loader: trendingTypeLoader,
           },
         ],
       },
