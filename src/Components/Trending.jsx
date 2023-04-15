@@ -13,7 +13,6 @@ const Trending = ({ data }) => {
       <div className="w-full h-full overflow-x-scroll scroll whitespace-nowrap scroll-smooth flex snap-x">
         {data.map((item) => {
           // console.log(item.id);
-
           return (
             <>
               <div
