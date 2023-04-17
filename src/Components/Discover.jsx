@@ -30,12 +30,6 @@ const Discover = ({ data }) => {
                   </Link>
                 </div>
               </div>
-              {/* 
-              <img
-                src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
-                alt={item.title}
-                className="w-full h-[420px] object-contain rounded-2xl mr-10"
-              /> */}
             </>
           );
         })}

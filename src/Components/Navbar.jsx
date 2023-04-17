@@ -17,7 +17,7 @@ const Navbar = () => {
 
   const listGenre = genre.map((item) => {
     return (
-      <li value={item.name} className="text-white text-sm" key={item.id}>
+      <li value={item.name} className="text-white text-sm hover:text-red-400" key={item.id}>
         <Link to={`genre/${item.id}`}>{item.name}</Link>
       </li>
     );
@@ -26,7 +26,7 @@ const Navbar = () => {
   return (
     <>
       <nav className="w-full py-3 bg-gray-800 flex flex-col justify-between items-center px-5 text-xl text-white mb-8">
-        <h1>
+        <h1 className="hover:tracking-widest transition-all">
           <Link to={"/"}>PENGKY MOVIE</Link>
         </h1>
         <div className="w-full mt-3">

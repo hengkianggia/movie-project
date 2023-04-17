@@ -1,7 +1,69 @@
+import React from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Root from "./Pages/Root";
+import HomePage, { loader as discoverLoader } from "./Pages/HomePage";
+import DetailMovie, { loader as detailMovie } from "./Pages/DetailMovie";
+import Genre, { loader as genreLoader } from "./Pages/Genre";
+import Trending from "./Pages/Trending";
+import HomeTrending, {
+  loader as trendingLoader,
+} from "./Components/HomeTrending";
+import TrendingType, {
+  loader as trendingTypeLoader,
+} from "./Pages/TrendingType";
 
 function App() {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Root />,
+      children: [
+        {
+          index: true,
+          element: <HomePage />,
+          loader: discoverLoader,
+        },
+        {
+          path: ":movieId",
+          element: <DetailMovie />,
+          id: "detail-movie",
+          loader: detailMovie,
+        },
+        {
+          path: "genre/:genreId",
+          element: <Genre />,
+          id: "genre",
+          loader: genreLoader,
+        },
+        {
+          path: "trending",
+          element: <Trending />,
+          id: "trending",
+          loader: trendingLoader,
+          children: [
+            {
+              index: true,
+              element: <HomeTrending />,
+            },
+            {
+              path: ":trendingType",
+              element: <TrendingType />,
+              id: "trending-type",
+              loader: trendingTypeLoader,
+            },
+          ],
+        },
+      ],
+    },
+  ]);
 
-  return <div className="App"></div>;
+  return (
+    <>
+      <RouterProvider router={router}>
+        <div className="App"></div>
+      </RouterProvider>
+    </>
+  );
 }
 
 export default App;
