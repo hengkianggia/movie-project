@@ -12,6 +12,7 @@ import TrendingType, {
   loader as trendingTypeLoader,
 } from "./Pages/TrendingType";
 import DetailTv, { loader as detailTvLoader } from "./Pages/DetailTv";
+import GenreTv, { loader as genreTvLoader } from "./Pages/GenreTv";
 
 function App() {
   const router = createBrowserRouter([
@@ -37,10 +38,21 @@ function App() {
           loader: detailTvLoader,
         },
         {
-          path: "genre/:genreId",
-          element: <Genre />,
-          id: "genre",
-          loader: genreLoader,
+          path: "genre",
+          children: [
+            {
+              path: "movie/:movieId",
+              element: <Genre />,
+              id: "genreMovie",
+              loader: genreLoader,
+            },
+            {
+              path: "tv/:tvId",
+              element: <GenreTv />,
+              id: "genreTv",
+              loader: genreTvLoader,
+            },
+          ],
         },
         {
           path: "trending",

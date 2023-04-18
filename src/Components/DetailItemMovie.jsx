@@ -33,7 +33,7 @@ const DetailItem = ({ data }) => {
                     key={item.id}
                     className="hover:scale-105 transition-all hover:text-red-400"
                   >
-                    <Link to={`/genre/${item.id}`}>{item.name}</Link>
+                    <Link to={`/genre/movie/${item.id}`}>{item.name}</Link>
                   </p>
                 );
               })}
