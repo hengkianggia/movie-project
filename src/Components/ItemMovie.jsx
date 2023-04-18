@@ -8,7 +8,7 @@ const Item = ({ data }) => {
       {data.map((item) => {
         return (
           <div className="w-[19%] hover:scale-105 transition-all" key={item.id}>
-            <Link to={`/${item.id}`}>
+            <Link to={`/movie/${item.id}`}>
               <div className="w-full h-96 bg-gray-200 rounded-xl overflow-hidden">
                 <img
                   src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}

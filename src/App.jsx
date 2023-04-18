@@ -1,5 +1,8 @@
 import React from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 import Root from "./Pages/Root";
 import HomePage, { loader as discoverLoader } from "./Pages/HomePage";
 import DetailMovie, { loader as detailMovie } from "./Pages/DetailMovie";
@@ -24,7 +27,7 @@ function App() {
           loader: discoverLoader,
         },
         {
-          path: ":movieId",
+          path: "movie/:movieId",
           element: <DetailMovie />,
           id: "detail-movie",
           loader: detailMovie,

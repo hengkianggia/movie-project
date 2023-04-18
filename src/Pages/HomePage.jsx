@@ -3,9 +3,10 @@ import { Await, defer, useLoaderData } from "react-router";
 import Loading from "../Components/Loading";
 import Discover from "../Components/Discover";
 import Trending from "../Components/Trending";
+import TvPopular from "../Components/TvPopular";
 
 const HomePage = () => {
-  const { discover, trending } = useLoaderData();
+  const { discover, trending, tv } = useLoaderData();
 
   return (
     <>
@@ -19,6 +20,12 @@ const HomePage = () => {
         <Suspense fallback={<Loading className={"text-[30px]"} />}>
           <Await resolve={trending}>
             {(trendingMovie) => <Trending data={trendingMovie} />}
+          </Await>
+        </Suspense>
+
+        <Suspense fallback={<Loading className={"text-[30px]"} />}>
+          <Await resolve={tv}>
+            {(tvPopular) => <TvPopular data={tvPopular} />}
           </Await>
         </Suspense>
       </div>
@@ -46,9 +53,19 @@ const trendingLoader = async () => {
   return result;
 };
 
+const tvLoader = async () => {
+  const response = await fetch(
+    `https://api.themoviedb.org/3/tv/top_rated?api_key=542160c3792c7bccea78ba58cf55157a`
+  );
+  const data = await response.json();
+  const result = data.results;
+  return result;
+};
+
 export const loader = async () => {
   return defer({
     discover: discoverLoader(),
     trending: trendingLoader(),
+    tv: tvLoader(),
   });
 };

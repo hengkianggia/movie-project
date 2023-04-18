@@ -1,5 +1,5 @@
 import React from "react";
-import Item from "./Item";
+import Item from "./ItemMovie";
 import { useRouteLoaderData } from "react-router";
 
 const HomeTrending = () => {

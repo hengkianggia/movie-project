@@ -22,7 +22,7 @@ const Discover = ({ data }) => {
                 }}
               >
                 <div className="flex flex-col justify-center gap-y-1 bg-gradient-to-r from-gray-900 text-white h-full w-full pl-10 pr-[860px] rounded-tl-2xl rounded-bl-2xl">
-                  <Link to={`/${item.id}`}>
+                  <Link to={`movie/${item.id}`}>
                     <p className="">Rating : {item.vote_average}</p>
                     <h1 className="text-3xl font-semibold">{item.title}</h1>
                     <p className="text-md w-40 truncate">{item.overview}</p>

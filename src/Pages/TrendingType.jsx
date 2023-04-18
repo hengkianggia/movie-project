@@ -1,5 +1,5 @@
 import React from "react";
-import Item from "../Components/Item";
+import Item from "../Components/ItemMovie";
 import { useRouteLoaderData } from "react-router";
 
 const TrendingType = () => {

@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Trending = ({ data }) => {
+const TvPopular = ({ data }) => {
   return (
     <>
       <div className="mb-5">
         <h1 className="text-3xl font-semibold text-gray-800">
-          <Link to={'trending'}>Trending</Link>
+          <Link to={"trending"}>Tv Top Rated</Link>
         </h1>
       </div>
 
@@ -23,7 +23,7 @@ const Trending = ({ data }) => {
                 key={item.id}
               >
                 <div className="w-full h-full relative rounded-xl overflow-hidden">
-                  <Link to={`movie/${item.id}`}>
+                  <Link to={`/${item.id}`}>
                     <img
                       src={``}
                       alt=""
@@ -43,4 +43,4 @@ const Trending = ({ data }) => {
   );
 };
 
-export default Trending;
+export default TvPopular;
