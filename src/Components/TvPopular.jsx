@@ -23,7 +23,7 @@ const TvPopular = ({ data }) => {
                 key={item.id}
               >
                 <div className="w-full h-full relative rounded-xl overflow-hidden">
-                  <Link to={`/${item.id}`}>
+                  <Link to={`tv/${item.id}`}>
                     <img
                       src={``}
                       alt=""

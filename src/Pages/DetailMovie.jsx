@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import { Await, defer, useRouteLoaderData } from "react-router";
-import DetailItem from "../Components/DetailItem";
+import DetailItem from "../Components/DetailItemMovie";
 import SimilarMovie from "../Components/SimilarMovie";
 import Loading from "../Components/Loading";
 

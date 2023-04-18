@@ -1,11 +1,8 @@
 import React from "react";
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./Pages/Root";
 import HomePage, { loader as discoverLoader } from "./Pages/HomePage";
-import DetailMovie, { loader as detailMovie } from "./Pages/DetailMovie";
+import DetailMovie, { loader as detailMovieLoader } from "./Pages/DetailMovie";
 import Genre, { loader as genreLoader } from "./Pages/Genre";
 import Trending from "./Pages/Trending";
 import HomeTrending, {
@@ -14,6 +11,7 @@ import HomeTrending, {
 import TrendingType, {
   loader as trendingTypeLoader,
 } from "./Pages/TrendingType";
+import DetailTv, { loader as detailTvLoader } from "./Pages/DetailTv";
 
 function App() {
   const router = createBrowserRouter([
@@ -30,7 +28,13 @@ function App() {
           path: "movie/:movieId",
           element: <DetailMovie />,
           id: "detail-movie",
-          loader: detailMovie,
+          loader: detailMovieLoader,
+        },
+        {
+          path: "tv/:tvId",
+          element: <DetailTv />,
+          id: "detail-tv",
+          loader: detailTvLoader,
         },
         {
           path: "genre/:genreId",
