@@ -16,7 +16,7 @@ const TvPopular = ({ data }) => {
           return (
             <>
               <div
-                className="flex mr-3 rounded-xl snap-center bg-cover bg-center"
+                className="flex mr-3 rounded-xl snap-center bg-cover bg-center bg-gray-200"
                 style={{
                   backgroundImage: `url('https://image.tmdb.org/t/p/w500${item.poster_path}')`,
                 }}

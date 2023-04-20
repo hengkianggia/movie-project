@@ -72,7 +72,7 @@ const Navbar = () => {
             className="hover:tracking-widest transition-all font-semibold"
             onClick={closeGenrehandler}
           >
-            <Link to={"/"}>PENGKY MOVIE</Link>
+            <Link to={"/"}>PNGKY MOVIE</Link>
           </h1>
           <button className="text-base" onClick={genreMovieHandler}>
             Genre Movie

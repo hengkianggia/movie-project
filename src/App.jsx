@@ -1,5 +1,9 @@
-import React from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import React, { useEffect } from "react";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  ScrollRestoration,
+} from "react-router-dom";
 import Root from "./Pages/Root";
 import HomePage, { loader as discoverLoader } from "./Pages/HomePage";
 import DetailMovie, { loader as detailMovieLoader } from "./Pages/DetailMovie";
@@ -80,6 +84,7 @@ function App() {
     <>
       <RouterProvider router={router}>
         <div className="App"></div>
+        <ScrollRestoration />
       </RouterProvider>
     </>
   );
